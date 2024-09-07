@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Projects - Simarpreet Singh</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="resume.html">Resume</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="projects">
+            <h1>Projects</h1>
+
+            <!-- Filter Buttons -->
+            <div class="filter-buttons">
+                <button data-filter="all">All</button>
+                <button data-filter="frontend">Frontend</button>
+                <button data-filter="backend">Backend</button>
+                <button data-filter="fullstack">Fullstack</button>
+            </div>
+
+            <div class="project-list">
+                <!-- Netflix Clone -->
+                <article class="project-card frontend">
+                    <h2>Netflix Clone</h2>
+                    <p>Developed a responsive web application replicating the Netflix interface using HTML, CSS, and JavaScript.</p>
+                    <a href="https://isimarpreet.github.io/Netflix-clone/" target="_blank">View Project</a>
+                    <a href="https://github.com/isimarpreet/Netflix-clone.git" target="_blank">View Repository</a>
+                </article>
+
+                <!-- Portfolio Website -->
+                <article class="project-card frontend">
+                    <h2>Portfolio Website</h2>
+                    <p>A curated collection of web development projects showcasing expertise in HTML, CSS, and user-centric design.</p>
+                    <a href="https://isimarpreet.github.io/Personal-Website/" target="_blank">View Project</a>
+                    <a href="https://github.com/isimarpreet/Personal-Website.git" target="_blank">View Repository</a>
+                </article>
+
+                <!-- Smart Dustbin -->
+                <article class="project-card backend">
+                    <h2>Smart Dustbin</h2>
+                    <p>Designed and developed a Smart Dustbin integrating ultrasonic sensors and microcontroller programming for precise waste management.</p>
+                </article>
+
+                <!-- Currency Converter -->
+                <article class="project-card backend">
+                    <h2>Currency Converter (Java)</h2>
+                    <p>Created a Java-based currency converter application with real-time exchange rates using external APIs.</p>
+                    <a href="https://github.com/isimarpreet/Currency_converter.git" target="_blank">View Repository</a>
+                </article>
+
+                <!-- LeetCode Solutions -->
+                <article class="project-card backend">
+                    <h2>LeetCode Problem Solving in Java</h2>
+                    <p>Proficient in solving algorithmic challenges on LeetCode using Java. Demonstrated strong problem-solving skills and expertise in data structures.</p>
+                    <a href="https://github.com/isimarpreet/Leetcode_answers.git" target="_blank">View Repository</a>
+                </article>
+
+                <!-- Offer Letter Generator -->
+                <article class="project-card fullstack">
+                    <h2>Offer Letter Generator</h2>
+                    <p>Automated tool for generating personalized internship offer letters with exportable PDF format. Technologies used include HTML, CSS, JavaScript, and PHP.</p>
+                    <a href="https://offer-letter-generator.netlify.app/" target="_blank">View Project</a>
+                </article>
+
+                <!-- KribSpace -->
+                <article class="project-card fullstack">
+                    <h2>KribSpace</h2>
+                    <p>AI-powered real estate application that processes natural language queries to fetch property information.</p>
+                    <a href="https://github.com/isimarpreet/KribSpace" target="_blank">View Repository</a>
+                </article>
+
+                <!-- User Management System -->
+                <article class="project-card fullstack">
+                    <h2>User Management System</h2>
+                    <p>Developed a user management application performing CRUD operations, integrated with a REST API using React.js.</p>
+                    <a href="https://github.com/isimarpreet/User-Management-System" target="_blank">View Repository</a>
+                    <a href="https://usermanagementusingcrud.netlify.app" target="_blank">View Project</a>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Simarpreet Singh</p>
+        <div class="social-media">
+            <a href="https://www.linkedin.com" class="social-icon">
+                <img src="linkedin.png" alt="LinkedIn" class="social-icon-img">
+            </a>
+            <a href="https://github.com" class="social-icon">
+                <img src="github.png" alt="GitHub" class="social-icon-img">
+            </a>
+        </div>
+    </footer>
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Log to confirm the script is loaded
+        console.log('Script Loaded');
+    
+        // Toggle project details (optional feature)
+        const projectCards = document.querySelectorAll('.project-card');
+    
+        projectCards.forEach(card => {
+            const details = card.querySelector('p');
+            if (details) {
+                card.addEventListener('click', function() {
+                    if (details.style.display === 'none' || details.style.display === '') {
+                        details.style.display = 'block';
+                    } else {
+                        details.style.display = 'none';
+                    }
+                });
+            }
+        }); 
+            // Filter projects based on the clicked button
+            const filterButtons = document.querySelectorAll(".filter-buttons button");
+            const allProjectCards = document.querySelectorAll(".project-card");
+        
+            filterButtons.forEach(button => {
+                button.addEventListener("click", function () {
+                    const filter = button.getAttribute("data-filter");
+        
+                    // Log to confirm button click is detected
+                    console.log(`${filter} button clicked`);
+        
+                    allProjectCards.forEach(card => {
+                        // Show all if 'all' filter is selected, otherwise apply the filter
+                        if (filter === "all" || card.classList.contains(filter)) {
+                            card.style.display = "block"; // Show matching project cards
+                        } else {
+                            card.style.display = "none"; // Hide non-matching project cards
+                        }
+                    });
+                });
+            });
+        });
+ </script>
+</body>
+</html>
