@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 document.addEventListener('scroll', () => {
     const scrollTopButton = document.getElementById('scroll-top-button');
-    if (window.scrollY > 200) {
+    if (window.scrollY > 150) {
         scrollTopButton.style.display = 'block';
     } else {
         scrollTopButton.style.display = 'none';
